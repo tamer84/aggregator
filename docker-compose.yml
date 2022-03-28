@@ -1,0 +1,12 @@
+version: '3'
+services:
+  aggregator:
+    container_name: aggregator
+    image: aggregator:latest
+    restart: always
+    environment:
+      - EVENT_TABLE=product-events-dev
+      - EVENT_TABLE_INDEX=product_id-index
+      - PORT=7000
+    ports:
+      - 7000:7000
